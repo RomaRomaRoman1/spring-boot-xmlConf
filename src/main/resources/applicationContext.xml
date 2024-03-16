@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Компоненты модели -->
+    <bean id="firstBean" class="model.FirstBean">
+        <constructor-arg ref="prototype"/>
+        <constructor-arg ref="singleton"/>
+    </bean>
+
+    <bean id="secondBean" class="model.SecondBean">
+        <constructor-arg ref="prototype"/>
+        <constructor-arg ref="singleton"/>
+    </bean>
+
+    <bean id="prototype" class="model.Prototype" scope="prototype"/>
+    <bean id="singleton" class="model.Singleton"/>
+
+
+
+</beans>
